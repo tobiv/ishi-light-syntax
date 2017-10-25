@@ -64,8 +64,11 @@ atom-text-editor {
   border-bottom: 3px solid tint(@light-sand, 20%);
 }
 
+/**
+ * Comment
+ */
 .syntax--comment {
-  color: @green;
+  color: shade(@light-sand, 20%);
   font-style: italic;
 }
 
@@ -164,6 +167,7 @@ atom-text-editor {
   }
   
   &.syntax--tag {
+    color: tint(@syntax-text-color, 30%);
     background: shade(@light-sand, 4%);
   }
   
@@ -178,7 +182,7 @@ atom-text-editor {
   
   &.syntax--definition {
     &.syntax--comment {
-      color: @green;
+      color: shade(@light-sand, 20%);
     }
 
     &.syntax--string {
@@ -260,10 +264,11 @@ atom-text-editor {
 
   &.syntax--name.syntax--tag {
     background: shade(@light-sand, 4%);
+    color: tint(@syntax-text-color, 20%);
   }
 
   &.syntax--other.syntax--attribute-name {
-    color: @orange;
+    color: @light-orange;
 
     &.syntax--id {
       color: @blue;
