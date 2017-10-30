@@ -1,4 +1,5 @@
 @import "syntax-variables";
+@import "css";
 
 atom-text-editor {
   background-color: @syntax-background-color;
@@ -17,16 +18,16 @@ atom-text-editor {
   }
   
   .line.cursor-line {
-    background: shade(@light-sand, 3%);
+    background: rgba(255,255,255, 0.2);
   }
 
   .gutter {
-    background-color: @syntax-gutter-background-color;
+    background: @syntax-gutter-background-color;
     color: @syntax-gutter-text-color;
 
     .line-number {
       &.cursor-line {
-        background-color: @syntax-gutter-background-color-selected;
+        background: @syntax-gutter-background-color-selected;
         color: @syntax-gutter-text-color-selected;
       }
 
@@ -39,7 +40,7 @@ atom-text-editor {
   .gutter .line-number.folded,
   .gutter .line-number:after,
   .fold-marker:after {
-    color: @light-gray;
+    color: @black;
   }
 
   .invisible {
@@ -58,33 +59,27 @@ atom-text-editor {
 
 // Syntax styles
 
-.syntax--meta.syntax--embedded.syntax--line {
-  background: tint(@light-sand, 20%);
-  border-top: 3px solid tint(@light-sand, 20%);
-  border-bottom: 3px solid tint(@light-sand, 20%);
-}
-
 /**
  * Comment
  */
 .syntax--comment {
-  color: shade(@light-sand, 20%);
+  color: @mid-gray;
   font-style: italic;
 }
 
 .syntax--keyword {
-  color: @purple;
+  color: @blue;
 
   &.syntax--control {
-    color: @syntax-text-color;
+    color: @cyan;
   }
 
   &.syntax--operator {
-    color: @syntax-text-color;
+    color: @gray;
   }
 
   &.syntax--other.syntax--special-method {
-    color: @blue;
+    color: @purple;
   }
 
   &.syntax--other.syntax--unit {
@@ -94,6 +89,10 @@ atom-text-editor {
 
 .syntax--storage {
   color: tint(@syntax-text-color, 20%);
+  
+  &.syntax--type {
+    border-bottom: 1px solid tint(@gray, 50%);
+  }
   
   &.syntax--modifier {
     color: tint(@syntax-text-color, 30%);
@@ -120,16 +119,15 @@ atom-text-editor {
   }
 
   &.syntax--other.syntax--symbol {
-    color: @green;
+    color: @gray;
   }
 }
 
 .syntax--variable {
-  background: @light-green;
-  color: @syntax-text-color;
+  color: @purple;
 
   &.syntax--interpolation {
-    color: darken(@red, 10%);
+    color: @red;
   }
 
   &.syntax--parameter.syntax--function {
@@ -143,7 +141,7 @@ atom-text-editor {
 }
 
 .syntax--string {
-  color: @neon-green;
+  color: @green;
 
 
   &.syntax--regexp {
@@ -163,36 +161,32 @@ atom-text-editor {
   &.syntax--terminator,
   &.syntax--separator,
   &.syntax--delimiter {
-    color: @green;
+    color: @gray;
   }
   
   &.syntax--tag {
-    color: tint(@syntax-text-color, 30%);
-    background: shade(@light-sand, 4%);
+    color: @gray;
   }
   
   &.syntax--bracket {
-    color: @green;
+    color: @gray;
   }
   
-  &.syntax--array {
-    background: shade(@light-sand, 4%);
-    color: @syntax-text-color;
+  &.syntax--array {
+    color: @mid-gray;
   }
   
   &.syntax--definition {
     &.syntax--comment {
-      color: shade(@light-sand, 20%);
+      color: @mid-gray;
     }
 
     &.syntax--string {
-      color: @green;
+      color: @gray;
     }
     
-    &.syntax--variable,
-    &.syntax--parameters,
-    &.syntax--array {
-      color: @syntax-text-color;
+    &.syntax--variable {
+      color: @purple;
     }
 
     &.syntax--heading,
@@ -201,7 +195,7 @@ atom-text-editor {
     }
 
     &.syntax--bold {
-      color: @light-orange;
+      color: @orange;
       font-weight: bold;
     }
 
@@ -212,27 +206,30 @@ atom-text-editor {
   }
 
   &.syntax--section.syntax--embedded {
-    color: @dark-violet;
+    color: @red;
+    border-bottom: 1px solid tint(@red, 25%);
   }
 
 }
 
-.bracket-matcher {
-  box-shadow: 0 2px 0 0 @dark-violet;
+// Matching brackets
+.bracket-matcher .region {
+  background-color: @yellow;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px @yellow;
 }
 
 .syntax--support {
   &.syntax--class {
-    background: @light-orange;
-    color: @syntax-text-color;
+    color: @orange;
+    border-bottom: 1px solid tint(@orange, 50%);
   }
 
   &.syntax--function  {
-    // background: mix(@dark-cyan, @light-sand, 30%);
     color: @syntax-text-color;
     
     &.syntax--construct {
-      color: @syntax-text-color;
+      color: @cyan;
     }
 
     &.syntax--any-method {
@@ -243,19 +240,20 @@ atom-text-editor {
 
 .syntax--entity {
   &.syntax--name.syntax--function {
-    background: @dark-cyan;
-    color: @syntax-text-color;
+    color: @blue;
   }
   &.syntax--name.syntax--type {
-    background: @light-orange;
-    color: @syntax-text-color;
+    color: @orange;
+    border-bottom: 1px solid tint(@orange, 50%);
   }
 
   &.syntax--other.syntax--inherited-class {
-    color: @green;
+    color: @orange;
+    border-bottom: 1px solid tint(@orange, 50%);
   }
   &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
-    color: @syntax-text-color;
+    color: @orange;
+    border-bottom: 1px solid tint(@orange, 50%);
   }
 
   &.syntax--name.syntax--section {
@@ -263,22 +261,25 @@ atom-text-editor {
   }
 
   &.syntax--name.syntax--tag {
-    background: shade(@light-sand, 4%);
-    color: tint(@syntax-text-color, 20%);
+    color: shade(@gray, 15%);
   }
 
   &.syntax--other.syntax--attribute-name {
-    color: @light-orange;
+    color: @gray;
 
     &.syntax--id {
-      color: @blue;
+      color: @cyan;
     }
   }
 }
 
 .syntax--meta {
+  &.syntax--doctype {
+    color: @mid-gray;
+  }
+  
   &.syntax--class {
-    color: @light-orange;
+    color: @gray;
   }
 
   &.syntax--link {
@@ -296,6 +297,10 @@ atom-text-editor {
   &.syntax--separator {
     background-color: @gray;
     color: @syntax-text-color;
+  }
+  
+  &.syntax--any {
+    color: @gray;
   }
 }
 
