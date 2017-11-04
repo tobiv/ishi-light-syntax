@@ -1,5 +1,6 @@
 @import "syntax-variables";
 @import "css";
+@import "md";
 
 atom-text-editor {
   background-color: @syntax-background-color;
@@ -48,7 +49,8 @@ atom-text-editor {
   }
 
   .cursor {
-    color: @syntax-cursor-color;
+    color: @blue;
+    border-width: 2px;
   }
 
   .selection .region {
@@ -84,6 +86,10 @@ atom-text-editor {
 
   &.syntax--other.syntax--unit {
     color: @orange;
+  }
+  
+  &.syntax--other.syntax--phpdoc {
+    color: @cyan;
   }
 }
 
@@ -125,6 +131,11 @@ atom-text-editor {
 
 .syntax--variable {
   color: @purple;
+  
+  &.syntax--object {
+    color: @purple;
+    // border-bottom: 1px solid tint(@purple, 50%);
+  }
 
   &.syntax--interpolation {
     color: @red;
@@ -207,7 +218,7 @@ atom-text-editor {
 
   &.syntax--section.syntax--embedded {
     color: @red;
-    border-bottom: 1px solid tint(@red, 25%);
+    box-shadow: inset 0 -5px 0 0 tint(@red, 75%);
   }
 
 }
