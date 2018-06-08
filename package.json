@@ -1,8 +1,8 @@
 {
   "name": "ishi-light-syntax",
   "theme": "syntax",
-  "version": "0.1.0",
-  "description": "A sandy light Atom syntax theme for the color blind",
+  "version": "0.2.0",
+  "description": "A light, muted/low-contrast Atom syntax theme for the color blind.",
   "keywords": [
     "syntax",
     "theme"
