@@ -1,7 +1,7 @@
 # Ishi Light
 A light, muted/low-contrast Atom syntax theme for the colorblind. (I have Protanopia, would love feedback from other types of CVD.) Colors inspired by [Martin Krzywinski](http://mkweb.bcgsc.ca/colorblind/). The name is inspired by the [Ishihara test](https://en.wikipedia.org/wiki/Ishihara_color_test_plate).
 
-![Screenshot](ishi-light-syntax-sc.png)
+![Screenshot](ishi-light-syntax-sc2.png)
 <small style="color:gray">Font: Operator Mono Book</small>
 
 ## Change log
