@@ -4,6 +4,10 @@ A light, muted/low-contrast Atom syntax theme for the colorblind. (I have Protan
 ![Screenshot](ishi-light-syntax-sc.png)
 <small style="color:gray">Font: Operator Mono Book</small>
 
+## Change log
+* **0.4.0** Improved contrast, supplemental bottom-border styling to help with color distinction.
+
+
 ## Work in Progress
 
 | Status | Language | Progress |
