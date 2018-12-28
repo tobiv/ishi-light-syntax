@@ -5,7 +5,10 @@
   "description": "A light, muted/low-contrast Atom syntax theme for the color blind.",
   "keywords": [
     "syntax",
-    "theme"
+    "theme",
+    "colorblind",
+    "light",
+    "muted"
   ],
   "repository": "https://github.com/tobiv/ishi-light-syntax",
   "license": "MIT",
